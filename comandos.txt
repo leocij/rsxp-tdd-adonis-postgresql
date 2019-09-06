@@ -2,6 +2,9 @@
 # Instalação do AdoniJs
 sudo npm i -g @adonisjs/cli
 
+# Help
+adonis -h
+
 
 ## Video aula #01: https://www.youtube.com/watch?v=3t78tTWt-JY
 
@@ -10,3 +13,28 @@ sudo npm i -g @adonisjs/cli
 adonis new backend --api-only --yarn
 
 adonis serve --dev
+
+## TDD
+adonis install @adonisjs/vow --yarn
+
+adonis key:generate
+
+# Crie e configure o .env.test
+
+# instala sqlite3
+yarn add sqlite3 -D
+
+# Postgresql para produção
+yarn add pg
+
+adonis test
+
+# Descomente as linhas no vowfile.js
+const ace = require('@adonisjs/ace')
+await ace.call('migration:run', {}, { silent: true })
+await ace.call('migration:reset', {}, { silent: true })
+
+# Gera controller
+adonis make:controller Session
+
+# Edit o database/factory.js
