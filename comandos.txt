@@ -69,3 +69,12 @@ yarn eslint --fix start --ext .js
 yarn eslint --fix database --ext .js
 
 yarn eslint --fix config --ext .js
+
+## Se der erro no comando adonis
+yarn add @adonisjs/ace
+
+adonis install @adonisjs/validator --yarn
+
+adonis make:validator Session
+adonis make:validator Forgot
+adonis make:validator Reset
