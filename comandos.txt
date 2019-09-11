@@ -7,6 +7,7 @@ adonis -h
 
 
 ## Video aula #01: https://www.youtube.com/watch?v=3t78tTWt-JY
+## Video aula #02: https://www.youtube.com/watch?v=R7WTFLM1lto&feature=em-uploademail
 
 ## BACKEND
 
@@ -38,3 +39,21 @@ await ace.call('migration:reset', {}, { silent: true })
 adonis make:controller Session
 
 # Edit o database/factory.js
+
+# Instale email fake e adicione o provider no start/app.js
+adonis install @adonisjs/mail --yarn
+
+# Limpa a base após cada teste
+trait('DatabaseTransactions')
+
+## Escolha http
+adonis make:controller ForgotPassword
+adonis make:controller ResetPassword
+
+yarn add date-fns
+
+yarn add eslint -D
+
+yarn eslint --init
+
+## Digite yarn para atualizar o projeto se precisar
