@@ -78,3 +78,56 @@ adonis install @adonisjs/validator --yarn
 adonis make:validator Session
 adonis make:validator Forgot
 adonis make:validator Reset
+
+# Use pgAdmin4
+http://127.0.0.1:35485/browser/
+
+# Crie um database rsxp e rode o comando
+adonis migration:run
+
+adonis serve --dev
+
+# Cadastrar usuário
+adonis repl
+const User = use('App/Models/User')
+User.create({ name: "Name One", email: "name.one@email.com", password: "name123" })
+
+# Se quiser criar uma senha criptografada
+adonis repl
+const Hash = use('Hash')
+await Hash.make("name123")
+
+# mailtrap.io e preencha no .env
+SMTP_HOST=smtp.mailtrap.io
+MAIL_USERNAME=558d38a4fbe314
+MAIL_PASSWORD=32a5d2a1a35a9e
+
+adonis serve --dev
+
+# Criando workshop model com -m = migration e -c = controller
+adonis make:model Workshop -m -c
+
+# Configure a migration criada e execute o comando
+adonis migration:run
+
+# Cria validações
+adonis make:validator Workshop
+
+adonis make:provider CustomValidation
+
+# Internacinalização
+adonis install @adonisjs/antl --yarn
+
+# Novo controller
+adonis make:controller ProfileController
+
+adonis make:controller FileController
+
+# Novo validator
+adonis make:validator Profile
+
+## Obs: quando possível pegar os arquivos validation.json no site https://github.com/rocketseat/rsxp
+
+##### Parei aqui
+https://www.youtube.com/watch?v=sB7GaMTJ7eI&feature=em-uploademail
+2:01:36 / 2:44:21

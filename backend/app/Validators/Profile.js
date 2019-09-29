@@ -1,8 +1,7 @@
-'use strict'
 
 const Antl = use('Antl')
 
-class Session {
+class Profile {
 
   get validateAll() {
     return true
@@ -10,8 +9,9 @@ class Session {
   
   get rules () {
     return {
-      email: 'email|required',
-      password: 'required',
+      name: 'required',
+      password: 'confirmed',
+      avatar: 'file|file_ext:png,jpg,jpeg|file_size:2mb|file_types:image',
     }
   }
 
@@ -21,4 +21,4 @@ class Session {
 
 }
 
-module.exports = Session
+module.exports = Profile
