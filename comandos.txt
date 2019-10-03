@@ -110,6 +110,12 @@ adonis make:model Workshop -m -c
 # Configure a migration criada e execute o comando
 adonis migration:run
 
+# Reseta as migrations
+adonis migration:refresh
+
+# Rollback no que foi feito por ultimo
+adonis migration:rollback
+
 # Cria validações
 adonis make:validator Workshop
 
@@ -130,4 +136,3 @@ adonis make:validator Profile
 
 ##### Parei aqui
 https://www.youtube.com/watch?v=sB7GaMTJ7eI&feature=em-uploademail
-2:01:36 / 2:44:21
