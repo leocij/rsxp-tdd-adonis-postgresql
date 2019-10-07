@@ -9,6 +9,13 @@ class Workshop extends Model {
     return this.belongsTo('App/Models/User');
   }
 
+  // Relationship Many to Many
+  subscriptions() {
+    return this.belongsToMany('App/Models/User')
+      .pivotTable('subscriptions')
+      .withTimestamps()
+  }
+
   getSection(section) {
     return Number(section)
   }

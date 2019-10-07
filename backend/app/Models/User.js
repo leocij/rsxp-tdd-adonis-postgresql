@@ -8,7 +8,7 @@ const Env = use('Env');
 
 class User extends Model {
 
-  static get computed () {
+  static get computed() {
     return ['avatar_url']
   }
 
@@ -28,6 +28,13 @@ class User extends Model {
 
   workshops() {
     return this.hasMany('App/Models/Workshop');
+  }
+
+  // Relationship Many to Many
+  subscriptions() {
+    return this.belongsToMany('App/Models/Workshop')
+      .pivotTable('subscriptions')
+      .withTimestamps()
   }
 
   getAvatarUrl({ avatar }) {

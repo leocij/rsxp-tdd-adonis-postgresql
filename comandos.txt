@@ -132,7 +132,13 @@ adonis make:controller FileController
 # Novo validator
 adonis make:validator Profile
 
+adonis make:controller Subscription
+
+adonis make:migration subscription_schema
+
+adonis migration:run
+
 ## Obs: quando possível pegar os arquivos validation.json no site https://github.com/rocketseat/rsxp
 
-##### Parei aqui
-https://www.youtube.com/watch?v=sB7GaMTJ7eI&feature=em-uploademail
+##### Parei aqui #05
+https://www.youtube.com/watch?v=whDe_W-CtiU&feature=em-uploademail
